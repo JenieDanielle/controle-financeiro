@@ -10,9 +10,6 @@ if (!isset($_GET['id_mes']) || empty($_GET['id_mes'])) {
 }
 $mesId = mysqli_real_escape_string($conn, $_GET['id_mes']);
 
-
-/*--------------------*/
-
 // Buscar categorias para o select
 $sqlCategorias = "SELECT id_categoria, nome_categoria FROM categoria";
 $resultCategorias = $conn->query($sqlCategorias);
@@ -35,7 +32,7 @@ $resultMovimentacoes = $conn->query($sqlMovimentacoes);
     <title>Movimentação</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link href="../css/movimentacoes.css" rel="stylesheet">
+    <link href="../css/movimentacao.css" rel="stylesheet">
 </head>
 <body>
     <div class="container mt-5">

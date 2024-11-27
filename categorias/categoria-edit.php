@@ -32,7 +32,6 @@ $categoria = mysqli_fetch_assoc($result);
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link href="../css/categoria.css" rel="stylesheet">
 </head>
-<script src="../js/script.js"></script>
 <body>
     <div class="container mt-5">
         <div class="row justify-content-center">
