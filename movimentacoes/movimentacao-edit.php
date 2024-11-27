@@ -34,13 +34,22 @@ $resultCategorias = $conn->query($sqlCategorias);
     <title>Editar Movimentação</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="../css/movimentacoes.css" rel="stylesheet">
 </head>
 <body>
 <div class="container mt-5">
     <div class="row justify-content-center">
         <div class="col-md-6">
+            <div class="card bg-dark">
+                <div class="card-header text-white bg-dark">
+                    <div class=" mt-3 mb-3 text-center">
+                        <h3>
+                            Editar movimentação
+                        </h3>
+                    </div>
+                </div>
+            </div>
             <div class="card">
-                <div class="card-header">
                     <div class="card-body">
                         <form action="movimentacao-acoes.php" method="POST">
                            
@@ -48,13 +57,6 @@ $resultCategorias = $conn->query($sqlCategorias);
                             <input type="hidden" name="id_mes" value="<?php echo $movimentacao['id_mes']; ?>">
                             <input type="hidden" name="acao" value="edit">
 
-                            <div class="mb-3">
-                                <h4>
-                                    Editar movimentação
-                                    <a href="movimentacao.php?id_mes=<?php echo $movimentacao['id_mes']; ?>" class="btn btn-danger float-end">Voltar</a>
-                                </h4>
-                            </div>
-                            
                             <div class="mt-4 mb-3">
                                 <label for="data_movimentacao" class="form-label">Data da Transação</label>
                                 <input type="date" name="data_movimentacao" id="data_movimentacao" class="form-control" 
@@ -90,12 +92,12 @@ $resultCategorias = $conn->query($sqlCategorias);
                             </div>
 
                             <div class=" mt-4 mb-3">
-                                <button type="submit" class="btn btn-primary float-end">Salvar</button>
+                             <a href="movimentacao.php?id_mes=<?php echo $movimentacao['id_mes']; ?>" class="btn btn-outline-dark">Voltar</a>
+                                <button type="submit" class="btn btn-outline-dark float-end">Salvar</button>
                             </div>
                         </form>
                     </div>
-                </div>
-            </div>
+            </div> 
         </div>
     </div>
 </div>

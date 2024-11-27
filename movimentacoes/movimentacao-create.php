@@ -35,23 +35,27 @@ $resultMovimentacoes = $conn->query($sqlMovimentacoes);
     <title>Movimentação</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="../css/movimentacoes.css" rel="stylesheet">
 </head>
 <body>
     <div class="container mt-5">
         <div class="row justify-content-center">
-            <div class="col-md-6 col-lg-10">
+            <div class="col-md-6 col-lg-6">
+                <div class="card bg-dark">
+                    <div class="card-header text-white bg-dark">
+                        <div class="mt-3 mb-3 text-center ">
+                            <h3>
+                                Cadastrar Movimentação
+                            </h3>
+                        </div>
+                    </div>
+                </div>
                 <div class="card">
-                    <div class="card-header">
                         <div class="card-body">
                             <form action="movimentacao-acoes.php" method="POST">
                                 <input type="hidden" name="id_mes" value="<?php echo $mesId; ?>">
                                 <input type="hidden" name="acao" value="cadastrar">
-                                <div class="mb-3">
-                                    <h3 class="md-3">
-                                        Cadastrar Movimentação
-                                        <a href="movimentacao.php?id_mes=<?php echo $mesId; ?>" class="btn btn-danger float-end">Voltar</a>
-                                    </h3>
-                                </div>
+                                
                                 <div class="mt-4 mb-3">
                                     <label for="data_movimentacao">Data da transação</label>
                                     <input type="date" name="data_movimentacao" id="data_movimentacao" class="form-control">
@@ -80,7 +84,8 @@ $resultMovimentacoes = $conn->query($sqlMovimentacoes);
                                     <label for="descricao_movimentacao">Descrição</label>
                                     <textarea type="text" name="descricao_movimentacao" id="descricao_movimentacao" class="form-control"></textarea>
                                 </div>
-                                <button type="submit" name="create_movimentacoes" class="btn btn-success">Salvar</button>
+                                <a href="movimentacao.php?id_mes=<?php echo $mesId; ?>" class="btn btn-outline-dark float-end">Voltar</a>
+                                <button type="submit" name="create_movimentacoes" class="btn btn-outline-dark">Salvar</button>
                             </form>
                         </div>
                     </div>   

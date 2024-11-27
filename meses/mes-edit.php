@@ -30,20 +30,22 @@ if (!isset($_GET['id'])) {
     <div class="container mt-5">
         <div class="row justify-content-center">
             <div class="col-md-6 col-lg-5">
+                <div class="card bg-dark">
+                    <div class="card-header text-white bg-dark">
+                        <div class="mt-3 mb-3 text-center">
+                            <h4>
+                                Editar mês
+                            </h4>
+                        </div>
+                    </div>
+                </div>
                 <div class="card">
-                    <div class="card-header">
                         <div class="card-body">
                             <?php
                             if ($mes) : 
                             ?>
-                            <form action="../categorias/mes-acoes.php" method="POST">
+                            <form action="../meses/mes-acoes.php" method="POST">
                                 <input type="hidden" name="mes_id" value="<?=$mes['id_mes']?>">
-                                <div class="mb-3">
-                                <h4>
-                                    Editar mês
-                                    <a href="../index.php" class="btn btn-danger float-end">Voltar</a>
-                                </h4>
-                                </div>
                                 <div class="mb-3">
                                     <label for="nome_mes" class="form-label">Nome do Mês</label>
                                     <select name="nome_mes" id="nome_mes" class="form-control">
@@ -62,7 +64,8 @@ if (!isset($_GET['id'])) {
                                     <input type="text" name="ano_mes" id="ano_mes" class="form-control" value="<?php echo $mes['ano_mes']; ?>">
                                 </div>
                                 <div class=" mt-4 mb-3">
-                                    <button type="submit" name="edit_mes" class="btn btn-primary float-end">Salvar</button>
+                                    <a href="../index.php" class="btn btn-outline-dark  float-end">Voltar</a>
+                                    <button type="submit" name="edit_mes" class="btn btn-outline-dark">Salvar</button>
                                 </div>
                             </form>
                         <?php
@@ -77,8 +80,7 @@ if (!isset($_GET['id'])) {
                         endif;
                         ?>
                         </div>
-                    </div>
-                </div>
+                </div> 
             </div>
         </div>
     </div>

@@ -17,16 +17,18 @@ require_once '../conexao.php';
     <div class="container mt-5">
         <div class="row justify-content-center">
             <div class="col-md-6 col-lg-5">
+                <div class="card bg-dark">
+                    <div class="card-header text-white bg-dark">
+                        <div class=" mt-3 mb-3 text-center">
+                            <h4>
+                                Adicionar Mês
+                            </h4>
+                        </div>
+                    </div>
+                </div>
                 <div class="card">
-                    <div class="card-header">
                         <div class="card-body">
                             <form action="mes-acoes.php" method="POST">
-                                <div class="mb-3">
-                                <h4>
-                                    Adicionar Mês
-                                    <a href="../index.php" class="btn btn-danger float-end">Voltar</a>
-                                </h4>
-                                </div>
                                 <div class="mb-3">
                                     <label for="txtnome_mes" class="form-label">Escolha o mês</label>
                                     <select class="form-select" id="txtnome_mes" name="txtnome_mes">
@@ -49,12 +51,13 @@ require_once '../conexao.php';
                                     <input type="text" class="form-control" id="txtano_mes" name="txtano_mes">
                                 </div>
                                 <div class="mt-4 mb-3">
-                                    <button type="submit" name="create-mes" class="btn btn-primary">Salvar</button>
+                                    <a href="../index.php" class="btn btn-outline-dark float-end">Voltar</a>
+                                    <button type="submit" name="create-mes" class="btn btn-outline-dark">Salvar</button>
                                 </div>
                             </form>
                         </div>
                     </div>
-                </div>
+                </div>    
             </div>
         </div>
     </div> 

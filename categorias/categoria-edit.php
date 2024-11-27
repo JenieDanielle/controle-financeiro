@@ -30,29 +30,37 @@ $categoria = mysqli_fetch_assoc($result);
     <title>Editar Categoria</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="../css/categoria.css" rel="stylesheet">
 </head>
+<script src="../js/script.js"></script>
 <body>
-    <div class="container mt-4">
-        <h1 class="text-center">
-            Editar Categoria
-            <a href="categoria-create.php" class="btn btn-danger float-end">Voltar</a>
-        </h1>
-        <div class="card">
-            <div class="card-header">Editar Categoria</div>
-            <div class="card-body">
-                <form action="categoria-acoes.php" method="POST">
-                    <input type="hidden" name="acao" value="editar">
-                    <input type="hidden" name="id_categoria" value="<?php echo $categoria['id_categoria'];?>">
-                    <div class="mb-3">
-                        <label for="nome_categoria">Nome da Categoria</label>
-                        <input type="text" name="nome_categoria" id="nome_categoria" value="<?=$categoria['nome_categoria']?>" class="form-control">
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-lg-5">
+                <div class="card bg-dark">
+                    <div class="card-header text-white bg-dark"><h4 class="mt-3 mb-3 text-center">Editar Categoria</h4></div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <form action="categoria-acoes.php" method="POST">
+                            <input type="hidden" name="acao" value="editar">
+                            <input type="hidden" name="id_categoria" value="<?php echo $categoria['id_categoria'];?>">
+                            <div class="mb-3">
+                                <label for="nome_categoria">Nome da Categoria</label>
+                                <input type="text" name="nome_categoria" id="nome_categoria" value="<?=$categoria['nome_categoria']?>" class="form-control">
+                            </div>
+                            <div class="mb-3">
+                                <label for="descricao_categoria">Descrição da Categoria</label>
+                                <textarea type="text" name="descricao_categoria" id="descricao_categoria" class="form-control"><?=$categoria['descricao_categoria']?></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <a href="categoria-create.php" class="btn btn-outline-dark float-end">Voltar</a>
+                                <button type="submit" class="btn btn-outline-dark">Salvar</button>
+                            </div>
+                            
+                        </form>
                     </div>
-                    <div class="mb-3">
-                        <label for="descricao_categoria">Descrição da Categoria</label>
-                        <textarea type="text" name="descricao_categoria" id="descricao_categoria" class="form-control"><?=$categoria['descricao_categoria']?></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-success">Salvar</button>
-                </form>
+                </div>
             </div>
         </div>
     </div>

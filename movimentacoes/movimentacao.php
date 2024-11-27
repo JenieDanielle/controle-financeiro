@@ -35,19 +35,22 @@ $resultMovimentacoes = $conn->query($sqlMovimentacoes);
     <title>Movimentação</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="../css/movimentacoes.css" rel="stylesheet">
 </head>
 <body>
     <div class="container mt-5">
         <div class="row justify-content-center">
             <div class="col-md-6 col-lg-10">
-                <div  class="card mt-4">
-                    <div class="card-header">
-                        <span>Movimentações Cadastradas do mês <?php echo $mesId; ?></span>
-                        <a href="movimentacao-create.php?id_mes=<?php echo $mesId; ?>" class="btn btn-primary btn-sm">
+                <div  class="card mt-4 bg-dark">
+                    <div class="mt-3 mb-3 card-header text-center text-white bg-dark">
+                        <h4>Movimentações Cadastradas do mês <?php echo $mesId; ?>
+                        <a href="../movimentacoes/movimentacao-create.php?id_mes=<?php echo $mesId; ?>" class=" btn btn-outline-light float-end">
                             <i class="bi bi-plus-lg"></i> Adicionar
                         </a>
-                        <a href="../index.php" class="btn btn-danger float-end">Voltar</a>                        </a>
+                        </h4>
                     </div>
+                </div>
+                <div class="card">
                     <div class="card-body">
                         <?php if ($resultMovimentacoes->num_rows > 0): ?>
                             <table class="table table-hover table-sm">
@@ -83,8 +86,8 @@ $resultMovimentacoes = $conn->query($sqlMovimentacoes);
                                                          <i class="bi bi-gear"></i> Ações
                                                     </button>
                                                     <ul class="dropdown-menu">
-                                                        <li><a class="dropdown-item" href="movimentacao-edit.php?id=<?php echo $movimentacao['id_movimentacao']; ?>">Editar <i class="bi bi-pencil"></i></a></li>
-                                                        <li><a href="movimentacao-acoes.php?acao=excluir&id=<?php echo $movimentacao['id_movimentacao']; ?>&id_mes=<?php echo $movimentacao['id_mes']; ?>" type="submit" class="dropdown-item" onclick="return confirm('Deseja excluir essa movimentação?')">Excluir <i class="bi bi-trash"></i></a></li>
+                                                        <li><a class="dropdown-item" href="movimentacao-edit.php?id=<?php echo $movimentacao['id_movimentacao']; ?>">Editar</i></a></li>
+                                                        <li><a href="movimentacao-acoes.php?acao=excluir&id=<?php echo $movimentacao['id_movimentacao']; ?>&id_mes=<?php echo $movimentacao['id_mes']; ?>" type="submit" class="dropdown-item" onclick="return confirm('Deseja excluir essa movimentação?')">Excluir </a></li>
                                                     </ul>
                                                 </div>
                                             </td>
@@ -92,8 +95,14 @@ $resultMovimentacoes = $conn->query($sqlMovimentacoes);
                                         <?php endwhile; ?>
                                 </tbody>
                             </table>
+                            <div class="mb-3">
+                                    <a href="../index.php" class="btn btn-outline-dark float-end">Voltar</a>   
+                            </div>
                         <?php else: ?>
                             <p class="text-center">Nenhuma movimentação cadastrada.</p>
+                            <div class="mb-3">
+                                        <a href="../index.php" class="btn btn-outline-dark float-end">Voltar</a>   
+                            </div>
                         <?php endif; ?>
                     </div>
                 </div>
